@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { FiDownload, FiArrowRight, FiGithub, FiExternalLink, FiMail, FiPhone, FiLinkedin } from 'react-icons/fi';
+import { FiDownload, FiArrowRight, FiGithub, FiExternalLink, FiMail, FiPhone, FiLinkedin, FiMapPin } from 'react-icons/fi';
 import { FaAws, FaDocker, FaPython, FaReact, FaJava, FaTrophy, FaCertificate, FaToolbox, FaDatabase, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiTerraform, SiKubernetes, SiLinux, SiMysql, SiMongodb, SiPostgresql, SiCplusplus, SiJavascript, SiGithubactions, SiHackerrank } from 'react-icons/si';
 import heroImage from './assets/profile.jpg';
@@ -314,6 +314,13 @@ export default function App() {
                   <div>
                     <p className="text-sm text-gray-500">Phone</p>
                     <a href="tel:+919392616675" className="text-white font-medium hover:text-[#0ea5e9] transition">+91-9392616675</a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#0ea5e9] text-xl"><FiMapPin /></div>
+                  <div>
+                    <p className="text-sm text-gray-500">Location</p>
+                    <p className="text-white font-medium">Hyderabad, Telangana</p>
                   </div>
                 </div>
               </div>
