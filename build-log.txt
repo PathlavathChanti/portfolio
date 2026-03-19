@@ -1,0 +1,111 @@
+﻿
+> chanti-portfolio@0.0.0 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 397 modules transformed.
+node.exe : [31mx[39m Build 
+failed in 5.29s
+At C:\Program Files\npm.ps1:29 
+char:3
++   & $NODE_EXE $NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: ([31mx[39m Build  
+   failed in 5.29s:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+[31merror during build:
+[31msrc/App.jsx (6:146): 
+"SiCss3" is not exported by "node_
+modules/react-icons/si/index.mjs",
+ imported by "src/App.jsx".[31m
+file: [36mC:/Users/pathl/.gemini/
+antigravity/playground/fractal-sat
+ellite/chanti-portfolio/src/App.js
+x:6:146[31m
+[33m
+4: import { FiDownload, 
+FiArrowRight, FiGithub, 
+FiExternalLink, FiMail, FiPhone, 
+FiLinkedin } from 
+'react-icons/fi';
+5: import { FaAws, FaDocker, 
+FaPython, FaReact, FaJava, 
+FaTrophy, FaCertificate, 
+FaToolbox, FaDatabase } from 
+'react-icons/fa';
+6: import { SiTerraform, 
+SiKubernetes, SiLinux, SiMysql, 
+SiMongodb, SiPostgresql, 
+SiCplusplus, SiJavascript, 
+SiGithubactions, SiHackerrank, 
+SiHtml5, SiCss3 } f...
+                                  
+                                  
+                                  
+                                  
+             ^
+7: import heroImage from 
+'./assets/hero.png';
+[31m
+    at getRollupError (file:///C:/
+Users/pathl/.gemini/antigravity/pl
+ayground/fractal-satellite/chanti-
+portfolio/node_modules/rollup/dist
+/es/shared/parseAst.js:402:41)
+    at error (file:///C:/Users/pat
+hl/.gemini/antigravity/playground/
+fractal-satellite/chanti-portfolio
+/node_modules/rollup/dist/es/share
+d/parseAst.js:398:42)
+    at Module.error (file:///C:/Us
+ers/pathl/.gemini/antigravity/play
+ground/fractal-satellite/chanti-po
+rtfolio/node_modules/rollup/dist/e
+s/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:
+///C:/Users/pathl/.gemini/antigrav
+ity/playground/fractal-satellite/c
+hanti-portfolio/node_modules/rollu
+p/dist/es/shared/node-entry.js:174
+52:29)
+    at ModuleScope.findVariable (f
+ile:///C:/Users/pathl/.gemini/anti
+gravity/playground/fractal-satelli
+te/chanti-portfolio/node_modules/r
+ollup/dist/es/shared/node-entry.js
+:15070:39)
+    at FunctionScope.findVariable 
+(file:///C:/Users/pathl/.gemini/an
+tigravity/playground/fractal-satel
+lite/chanti-portfolio/node_modules
+/rollup/dist/es/shared/node-entry.
+js:5673:38)
+    at 
+FunctionBodyScope.findVariable (fi
+le:///C:/Users/pathl/.gemini/antig
+ravity/playground/fractal-satellit
+e/chanti-portfolio/node_modules/ro
+llup/dist/es/shared/node-entry.js:
+5673:38)
+    at Identifier.bind (file:///C:
+/Users/pathl/.gemini/antigravity/p
+layground/fractal-satellite/chanti
+-portfolio/node_modules/rollup/dis
+t/es/shared/node-entry.js:5447:40)
+    at CallExpression.bind (file:/
+//C:/Users/pathl/.gemini/antigravi
+ty/playground/fractal-satellite/ch
+anti-portfolio/node_modules/rollup
+/dist/es/shared/node-entry.js:2825
+:28)
+    at CallExpression.bind (file:/
+//C:/Users/pathl/.gemini/antigravi
+ty/playground/fractal-satellite/ch
+anti-portfolio/node_modules/rollup
+/dist/es/shared/node-entry.js:1217
+9:15)[39m
