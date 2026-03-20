@@ -19,6 +19,7 @@ export default function App() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Training', href: '#training' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Certificates', href: '#certificates' },
@@ -30,7 +31,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050505] text-gray-200">
       {/* Navbar */}
-      <motion.nav 
+      <motion.nav
         initial={{ y: -100 }} animate={{ y: 0 }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3 shadow-lg object-contain' : 'py-5 bg-transparent'}`}
       >
@@ -74,7 +75,7 @@ export default function App() {
                 Hi, I'm <span className="text-gradient">Chanti</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-400 font-light mb-8 h-16">
-                Cloud Engineer | DevOps Enthusiast | Problem Solver
+                Cloud Engineer | DevOps Enthusiast |
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#projects" className="px-8 py-3 rounded-full bg-[#0ea5e9] text-white font-medium hover:bg-[#0ea5e9]/90 transition flex items-center space-x-2">
@@ -119,6 +120,33 @@ export default function App() {
           </div>
         </section>
 
+        {/* TRAINING */}
+        <section id="training" className="py-24 bg-black/20">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Training</h2>
+              <div className="w-20 h-1 bg-[#0ea5e9] mx-auto rounded-full" />
+            </motion.div>
+            <div className="space-y-6 max-w-4xl mx-auto">
+              {[
+                { course: "AWS Academy Graduate – Cloud Architecting", date: "Jan' 26", desc: "Focus on AWS Well-Architected Framework, VPC, EC2, S3, Auto Scaling, and decoupled architecture with SQS.", link: "https://www.credly.com/badges/e8ee4219-edcc-4d13-8084-6895f3eaff13/print" },
+                { course: "Responsive Web Design – freeCodeCamp", date: "Nov' 25", desc: "Certified in building complex, adaptive web layouts, accessibility-friendly sites, and modern UI techniques.", link: "https://www.freecodecamp.org/certification/fcc2794790b-ff8d-4e29-b495-ad9aea75fe2a/responsive-web-design" }
+              ].map((item, i) => (
+                <motion.a href={item.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="block glass-card p-6 md:p-8 rounded-xl border-l-4 border-l-[#0ea5e9] hover:bg-white/5 transition-colors group">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="text-xl font-bold text-white group-hover:text-[#0ea5e9] transition-colors">{item.course}</h4>
+                      <p className="text-[#0ea5e9] font-medium my-2">{item.date}</p>
+                      <p className="text-gray-400">{item.desc}</p>
+                    </div>
+                    <FiExternalLink className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity mt-1 text-xl flex-shrink-0 ml-4" />
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* SKILLS */}
         <section id="skills" className="py-24 relative">
           <div className="max-w-7xl mx-auto px-6">
@@ -128,11 +156,11 @@ export default function App() {
             </motion.div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: 'Programming', items: [ { name: 'Python', icon: <FaPython className="text-[#3776AB]" /> }, { name: 'C++', icon: <SiCplusplus className="text-[#00599C]" /> }, { name: 'C', icon: <SiCplusplus className="text-[#A8B9CC]" /> } ] },
-                { title: 'Cloud & DevOps', items: [ { name: 'AWS (EC2, S3, RDS)', icon: <FaAws className="text-[#FF9900]" /> }, { name: 'Docker', icon: <FaDocker className="text-[#2496ED]" /> }, { name: 'Kubernetes', icon: <SiKubernetes className="text-[#326CE5]" /> }, { name: 'GitHub Actions', icon: <SiGithubactions className="text-[#2088FF]" /> }, { name: 'Linux', icon: <SiLinux className="text-white" /> } ] },
-                { title: 'Backend & Databases', items: [ { name: 'MySQL', icon: <SiMysql className="text-[#4479A1]" /> }, { name: 'AWS RDS', icon: <FaAws className="text-[#FF9900]" /> } ] },
-                { title: 'Tools & Technologies', items: [ { name: 'HTML', icon: <FaHtml5 className="text-[#E34F26]" /> }, { name: 'CSS', icon: <FaCss3Alt className="text-[#1572B6]" /> }, { name: 'Git & GitHub', icon: <FiGithub className="text-white" /> }, { name: 'VMware & OpenStack', icon: <FaToolbox className="text-[#607078]" /> }, { name: 'MySQL Workbench', icon: <FaDatabase className="text-[#4479A1]" /> } ] },
-                { title: 'Soft Skills', items: [ { name: 'Adaptability', icon: <FaTrophy className="text-yellow-500" /> }, { name: 'Leadership', icon: <FaTrophy className="text-yellow-500" /> }, { name: 'Time Management', icon: <FaTrophy className="text-yellow-500" /> } ] }
+                { title: 'Programming', items: [{ name: 'Python', icon: <FaPython className="text-[#3776AB]" /> }, { name: 'C++', icon: <SiCplusplus className="text-[#00599C]" /> }, { name: 'C', icon: <SiCplusplus className="text-[#A8B9CC]" /> }] },
+                { title: 'Cloud & DevOps', items: [{ name: 'AWS (EC2, S3, RDS)', icon: <FaAws className="text-[#FF9900]" /> }, { name: 'Docker', icon: <FaDocker className="text-[#2496ED]" /> }, { name: 'Kubernetes', icon: <SiKubernetes className="text-[#326CE5]" /> }, { name: 'GitHub Actions', icon: <SiGithubactions className="text-[#2088FF]" /> }, { name: 'Linux', icon: <SiLinux className="text-white" /> }] },
+                { title: 'Backend & Databases', items: [{ name: 'MySQL', icon: <SiMysql className="text-[#4479A1]" /> }, { name: 'AWS RDS', icon: <FaAws className="text-[#FF9900]" /> }] },
+                { title: 'Tools & Technologies', items: [{ name: 'HTML', icon: <FaHtml5 className="text-[#E34F26]" /> }, { name: 'CSS', icon: <FaCss3Alt className="text-[#1572B6]" /> }, { name: 'Git & GitHub', icon: <FiGithub className="text-white" /> }, { name: 'VMware & OpenStack', icon: <FaToolbox className="text-[#607078]" /> }, { name: 'MySQL Workbench', icon: <FaDatabase className="text-[#4479A1]" /> }] },
+                { title: 'Soft Skills', items: [{ name: 'Adaptability', icon: <FaTrophy className="text-yellow-500" /> }, { name: 'Leadership', icon: <FaTrophy className="text-yellow-500" /> }, { name: 'Time Management', icon: <FaTrophy className="text-yellow-500" /> }] }
               ].map((cat, idx) => (
                 <motion.div key={idx} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="glass-card p-8 rounded-2xl border border-white/5">
                   <h3 className="text-xl font-semibold text-white mb-6 border-b border-white/10 pb-4">{cat.title}</h3>
@@ -196,12 +224,12 @@ export default function App() {
               </motion.h3>
               <div className="space-y-4">
                 {[
-                  { name: "Oracle Cloud Infrastructure 2025 AI Foundations", date: "Mar' 26", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=92E6CBE56C9727325E6C99E053A0DD917EFA6E34BF54FB0912CAFC5E690B4E6A" }, 
-                  { name: "Computational Theory & Finite Automata", date: "Aug' 25", link: "https://drive.google.com/file/d/1MKNngj9fZcDANrC8ZcNcBxumcOhPzKAL/view" }, 
-                  { name: "Build Generative AI Apps with No-Code Tools", date: "Aug' 25", link: "https://drive.google.com/file/d/1ADUP--NLSZGHR-Arg1SMHpcWSC7lvo-R/view" }, 
+                  { name: "Oracle Cloud Infrastructure 2025 AI Foundations", date: "Mar' 26", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=92E6CBE56C9727325E6C99E053A0DD917EFA6E34BF54FB0912CAFC5E690B4E6A" },
+                  { name: "Computational Theory & Finite Automata", date: "Aug' 25", link: "https://drive.google.com/file/d/1MKNngj9fZcDANrC8ZcNcBxumcOhPzKAL/view" },
+                  { name: "Build Generative AI Apps with No-Code Tools", date: "Aug' 25", link: "https://drive.google.com/file/d/1ADUP--NLSZGHR-Arg1SMHpcWSC7lvo-R/view" },
                   { name: "Python for Data Science, AI & Development", date: "Feb' 24", link: "https://www.coursera.org/account/accomplishments/verify/2AF6RBJ4WEW2" }
                 ].map((cert, i) => (
-                  <motion.a href={cert.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="glass-card p-6 rounded-xl flex items-center justify-between hover:-translate-y-1 transition-all group block cursor-pointer">
+                  <motion.a href={cert.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card p-6 rounded-xl flex items-center justify-between hover:-translate-y-1 transition-all group block cursor-pointer">
                     <div className="flex items-center space-x-4">
                       <div className="w-10 h-10 rounded-full bg-[#0ea5e9]/10 flex items-center justify-center text-[#0ea5e9] group-hover:bg-[#0ea5e9] group-hover:text-white transition-colors flex-shrink-0"><FaCertificate /></div>
                       <div>
@@ -214,7 +242,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-            
+
             <div id="achievements">
               <motion.h3 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-3xl font-bold text-white mb-8 flex items-center space-x-3">
                 <FaTrophy className="text-yellow-500" /> <span>Achievements</span>
@@ -240,52 +268,29 @@ export default function App() {
           </div>
         </section>
 
-        {/* EDUCATION & TRAINING */}
+        {/* EDUCATION */}
         <section id="education" className="py-24 bg-black/20">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div>
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center md:text-left">
-                <h2 className="text-3xl font-bold text-white">Education</h2>
-                <div className="w-16 h-1 bg-[#0ea5e9] mt-2 rounded-full mx-auto md:mx-0" />
-              </motion.div>
-              <div className="space-y-8 border-l-2 border-white/10 ml-3 pl-8 relative">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Education</h2>
+              <div className="w-20 h-1 bg-[#0ea5e9] mx-auto rounded-full" />
+            </motion.div>
+            <div className="max-w-3xl mx-auto">
+              <div className="space-y-8 border-l-2 border-white/10 ml-3 md:ml-6 pl-8 relative">
                 {[
                   { school: "Lovely Professional University Phagwara, Punjab", degree: "B.Tech in Computer Science and Engineering", score: "CGPA: 7.25", date: "Aug' 23 - Present" },
                   { school: "Narayana Junior College Ranga Reddy, Telangana", degree: "Intermediate (MPC)", score: "Percentage: 95.3", date: "Jul' 22 - Mar' 23" },
                   { school: "Sloka The School Hyderabad, Telangana", degree: "Matriculation", score: "Percentage: 100", date: "Apr' 20 - Jun' 21" }
                 ].map((item, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="relative">
-                    <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-[#050505] border-4 border-[#0ea5e9]" />
-                    <h4 className="text-xl font-bold text-white">{item.school}</h4>
-                    <p className="text-[#0ea5e9] font-medium my-1">{item.degree}</p>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="inline-block px-3 py-1 bg-white/5 rounded-md text-sm text-gray-300 border border-white/10">{item.score}</span>
-                      <span className="text-gray-500 text-xs">{item.date}</span>
+                  <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="relative glass-card p-6 md:p-8 rounded-r-xl rounded-bl-xl border md:border-transparent hover:border-white/10 transition-colors">
+                    <div className="absolute -left-[41px] top-8 w-5 h-5 rounded-full bg-[#050505] border-4 border-[#0ea5e9]" />
+                    <h4 className="text-xl md:text-2xl font-bold text-white">{item.school}</h4>
+                    <p className="text-[#0ea5e9] font-medium my-2 text-lg">{item.degree}</p>
+                    <div className="flex flex-wrap items-center gap-3 mt-4">
+                      <span className="inline-block px-3 py-1.5 bg-white/5 rounded-md text-sm text-gray-300 border border-white/10 font-medium">{item.score}</span>
+                      <span className="text-gray-500 font-medium">{item.date}</span>
                     </div>
                   </motion.div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center md:text-left">
-                <h2 className="text-3xl font-bold text-white">Training</h2>
-                <div className="w-16 h-1 bg-[#0ea5e9] mt-2 rounded-full mx-auto md:mx-0" />
-              </motion.div>
-              <div className="space-y-6">
-                {[
-                  { course: "AWS Academy Graduate – Cloud Architecting", date: "Jan' 26", desc: "Focus on AWS Well-Architected Framework, VPC, EC2, S3, Auto Scaling, and decoupled architecture with SQS.", link: "https://www.credly.com/badges/e8ee4219-edcc-4d13-8084-6895f3eaff13/print" },
-                  { course: "Responsive Web Design – freeCodeCamp", date: "Nov' 25", desc: "Certified in building complex, adaptive web layouts, accessibility-friendly sites, and modern UI techniques.", link: "https://www.freecodecamp.org/certification/fcc2794790b-ff8d-4e29-b495-ad9aea75fe2a/responsive-web-design" }
-                ].map((item, i) => (
-                  <motion.a href={item.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="block glass-card p-6 rounded-xl border-l-4 border-l-[#0ea5e9] hover:bg-white/5 transition-colors group">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="text-lg font-bold text-white group-hover:text-[#0ea5e9] transition-colors">{item.course}</h4>
-                        <p className="text-[#0ea5e9] text-xs font-medium my-1">{item.date}</p>
-                        <p className="text-gray-400 text-sm">{item.desc}</p>
-                      </div>
-                      <FiExternalLink className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity mt-1" />
-                    </div>
-                  </motion.a>
                 ))}
               </div>
             </div>
