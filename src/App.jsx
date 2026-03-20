@@ -19,9 +19,9 @@ export default function App() {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Training', href: '#training' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Training', href: '#training' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Achievements', href: '#achievements' },
     { name: 'Education', href: '#education' },
@@ -120,32 +120,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* TRAINING */}
-        <section id="training" className="py-24 bg-black/20">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Training</h2>
-              <div className="w-20 h-1 bg-[#0ea5e9] mx-auto rounded-full" />
-            </motion.div>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {[
-                { course: "AWS Academy Graduate – Cloud Architecting", date: "Jan' 26", desc: "Focus on AWS Well-Architected Framework, VPC, EC2, S3, Auto Scaling, and decoupled architecture with SQS.", link: "https://www.credly.com/badges/e8ee4219-edcc-4d13-8084-6895f3eaff13/print" },
-                { course: "Responsive Web Design – freeCodeCamp", date: "Nov' 25", desc: "Certified in building complex, adaptive web layouts, accessibility-friendly sites, and modern UI techniques.", link: "https://www.freecodecamp.org/certification/fcc2794790b-ff8d-4e29-b495-ad9aea75fe2a/responsive-web-design" }
-              ].map((item, i) => (
-                <motion.a href={item.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="block glass-card p-6 md:p-8 rounded-xl border-l-4 border-l-[#0ea5e9] hover:bg-white/5 transition-colors group">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h4 className="text-xl font-bold text-white group-hover:text-[#0ea5e9] transition-colors">{item.course}</h4>
-                      <p className="text-[#0ea5e9] font-medium my-2">{item.date}</p>
-                      <p className="text-gray-400">{item.desc}</p>
-                    </div>
-                    <FiExternalLink className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity mt-1 text-xl flex-shrink-0 ml-4" />
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* SKILLS */}
         <section id="skills" className="py-24 relative">
@@ -210,6 +185,33 @@ export default function App() {
                     </div>
                   </div>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TRAINING */}
+        <section id="training" className="py-24 bg-black/20">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-10 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Training</h2>
+              <div className="w-20 h-1 bg-[#0ea5e9] mx-auto rounded-full" />
+            </motion.div>
+            <div className="space-y-6 max-w-4xl mx-auto">
+              {[
+                { course: "AWS Academy Graduate – Cloud Architecting", date: "Jan' 26", desc: "Focus on AWS Well-Architected Framework, VPC, EC2, S3, Auto Scaling, and decoupled architecture with SQS.", link: "https://www.credly.com/badges/e8ee4219-edcc-4d13-8084-6895f3eaff13/print" },
+                { course: "Responsive Web Design – freeCodeCamp", date: "Nov' 25", desc: "Certified in building complex, adaptive web layouts, accessibility-friendly sites, and modern UI techniques.", link: "https://www.freecodecamp.org/certification/fcc2794790b-ff8d-4e29-b495-ad9aea75fe2a/responsive-web-design" }
+              ].map((item, i) => (
+                <motion.a href={item.link} target="_blank" rel="noopener noreferrer" key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="block glass-card p-6 md:p-8 rounded-xl border-l-4 border-l-[#0ea5e9] hover:bg-white/5 transition-colors group">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="text-xl font-bold text-white group-hover:text-[#0ea5e9] transition-colors">{item.course}</h4>
+                      <p className="text-[#0ea5e9] font-medium my-2">{item.date}</p>
+                      <p className="text-gray-400">{item.desc}</p>
+                    </div>
+                    <FiExternalLink className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity mt-1 text-xl flex-shrink-0 ml-4" />
+                  </div>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -282,7 +284,7 @@ export default function App() {
                   { school: "Narayana Junior College Ranga Reddy, Telangana", degree: "Intermediate (MPC)", score: "Percentage: 95.3", date: "Jul' 22 - Mar' 23" },
                   { school: "Sloka The School Hyderabad, Telangana", degree: "Matriculation", score: "Percentage: 100", date: "Apr' 20 - Jun' 21" }
                 ].map((item, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="relative glass-card p-6 md:p-8 rounded-r-xl rounded-bl-xl border md:border-transparent hover:border-white/10 transition-colors">
+                  <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative glass-card p-6 md:p-8 rounded-r-xl rounded-bl-xl border md:border-transparent hover:border-white/10 transition-colors">
                     <div className="absolute -left-[41px] top-8 w-5 h-5 rounded-full bg-[#050505] border-4 border-[#0ea5e9]" />
                     <h4 className="text-xl md:text-2xl font-bold text-white">{item.school}</h4>
                     <p className="text-[#0ea5e9] font-medium my-2 text-lg">{item.degree}</p>
