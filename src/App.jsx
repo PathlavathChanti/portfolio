@@ -337,23 +337,23 @@ export default function App() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <form className="glass-card p-8 rounded-2xl flex flex-col space-y-5" onSubmit={e => e.preventDefault()}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                  <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#0ea5e9] transition" placeholder="Your Name" />
+              <div className="glass-card p-10 rounded-2xl flex flex-col items-center justify-center space-y-8 text-center h-full">
+                <div className="w-24 h-24 rounded-full bg-[#0ea5e9]/10 flex items-center justify-center text-[#0ea5e9] text-4xl mb-[-1rem]">
+                  <FiMail />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                  <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#0ea5e9] transition" placeholder="your@example.com" />
+                <h3 className="text-3xl font-bold text-white">Connect Instantly</h3>
+                <p className="text-gray-400 max-w-sm">
+                  Skip the form. Get in touch directly via email or send me a message on LinkedIn!
+                </p>
+                <div className="flex flex-col gap-4 w-full mt-2">
+                  <a href="mailto:pathlavathchanti986@gmail.com" className="w-full py-4 rounded-lg bg-[#0ea5e9] text-white font-bold hover:bg-[#0ea5e9]/90 transition shadow-lg shadow-[#0ea5e9]/30 flex items-center justify-center space-x-2">
+                    <FiMail className="text-xl" /> <span>Email Me</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/pathlavathchanti" target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-lg glass border border-[#0ea5e9]/30 text-white font-bold hover:bg-white/5 transition flex items-center justify-center space-x-2">
+                    <FiLinkedin className="text-xl text-[#0ea5e9]" /> <span>Message on LinkedIn</span>
+                  </a>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                  <textarea rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#0ea5e9] transition" placeholder="Your message here..."></textarea>
-                </div>
-                <button className="w-full py-4 rounded-lg bg-[#0ea5e9] text-white font-bold hover:bg-[#0ea5e9]/90 transition shadow-lg shadow-[#0ea5e9]/30">
-                  Send Message
-                </button>
-              </form>
+              </div>
             </motion.div>
           </div>
         </section>
